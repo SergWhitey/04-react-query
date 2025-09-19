@@ -1,6 +1,12 @@
 import axios from 'axios';
 import { Movie } from '../types/movie';
 
+export interface FetchMoviesResponse {
+  page: number;
+  total_pages: number;
+  results: Movie[];
+}
+
 const BASE_URL = 'https://api.themoviedb.org/3';
 const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p';
 
@@ -13,15 +19,9 @@ if (!token) {
 const axiosInstance = axios.create({
   baseURL: BASE_URL,
   headers: {
-    Authorization: `Bearer ${token}`, // використай змінну з env
+    Authorization: `Bearer ${token}`,
   },
 });
-
-export interface FetchMoviesResponse {
-  page: number;
-  total_pages: number;
-  results: Movie[];
-}
 
 export async function fetchMovies(query: string, page: number = 1): Promise<FetchMoviesResponse> {
   const response = await axiosInstance.get<FetchMoviesResponse>('/search/movie', {
@@ -35,6 +35,8 @@ export async function fetchMovies(query: string, page: number = 1): Promise<Fetc
   return response.data;
 }
 
-export function getImageUrl(path: string | null, size: 'w500' | 'original' = 'w500'): string {
+export function getImageUrl(path: string | null,
+  size: 'w500' | 'original' = 'w500'
+): string {
   return path ? `${IMAGE_BASE_URL}/${size}${path}` : '';
 }
