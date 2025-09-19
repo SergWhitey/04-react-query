@@ -26,6 +26,7 @@ const { data, isLoading, isError, isFetching } = useQuery<FetchMoviesResponse, E
   queryFn: () => fetchMovies(query, page),
   enabled: !!query,
   staleTime: 5000,
+  placeholderData: (previousData) => previousData,
 });
 
   const handleSearch = (newQuery: string) => {
