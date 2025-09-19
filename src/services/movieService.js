@@ -8,7 +8,7 @@ if (!token) {
 const axiosInstance = axios.create({
     baseURL: BASE_URL,
     headers: {
-        Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3ZDhmZjg0OThlZDdmNjJiMGM4ZjljZTE1YTcyOTU0ZSIsIm5iZiI6MTc1ODIyNjc3MC4zMTEsInN1YiI6IjY4Y2M2OTUyNTAwNGMxMTgzY2JkMGRjNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Sj8ciJRfNcgXbL6uZ6uiaj6tBfcrTDzMAgbfQCULkZ4`,
+        Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5Njc3OTI0NTY2YWZlYjdhNGVmMGU5ZDJlMTY5ZWIwMSIsIm5iZiI6MTc1ODIyNjc3MC4zMTEsInN1YiI6IjY4Y2M2OTUyNTAwNGMxMTgzY2JkMGRjNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.jDh5AYcH2yW8OYMnnvq8a0quJB6Sgpf5yGCPJdWQU3Y`,
     },
 });
 export async function fetchMovies(query) {
